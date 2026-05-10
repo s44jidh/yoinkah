@@ -6,7 +6,7 @@ import os
 import sys
 import re
 
-# --- PORTABLE PATH LOGIC ---
+
 if getattr(sys, 'frozen', False):
     APP_DIR = os.path.dirname(sys.executable)
 else:
@@ -24,18 +24,18 @@ class YoinkahApp(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        # Window Config
+        
         self.title("YOINKAH!")
         self.geometry("500x650")
         self.appearance_mode = "dark"
         ctk.set_appearance_mode(self.appearance_mode)
         
-        # Variables
+        
         self.save_dir = ctk.StringVar(value=DEFAULT_PATH)
         self.format_var = ctk.StringVar(value="mp4")
         self.res_var = ctk.StringVar(value="1080p")
 
-        # --- TOP NAV (Theme Switcher) ---
+        
         self.nav_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.nav_frame.pack(side="top", fill="x", padx=20, pady=10)
 
@@ -45,7 +45,7 @@ class YoinkahApp(ctk.CTk):
                                        command=self.toggle_theme, corner_radius=20)
         self.theme_btn.pack(side="right")
 
-        # --- UI LAYOUT ---
+        
         self.logo = ctk.CTkLabel(self, text="YOINKAH!", font=("Arial Black", 32))
         self.logo.pack(pady=(10, 20))
 
@@ -62,14 +62,14 @@ class YoinkahApp(ctk.CTk):
         self.settings_frame = ctk.CTkFrame(self, fg_color=("#ebebeb", "#161616"), border_width=1, border_color="#222", corner_radius=20)
         self.settings_frame.pack(pady=20, padx=40, fill="x")
 
-        # Resolution Row (FIXED VISIBILITY)
+        
         ctk.CTkLabel(self.settings_frame, text="RES:", font=("Arial", 10, "bold"), text_color="#555").grid(row=0, column=0, padx=15, pady=(15, 5))
         self.res_menu = ctk.CTkOptionMenu(self.settings_frame, 
                                           values=["2160p", "1440p", "1080p", "720p", "480p"], 
                                           variable=self.res_var, 
                                           fg_color=("#333", "#0a0a0a"), 
                                           button_color=("#444", "#222"),
-                                          text_color="white", # Fixed: white text for visibility
+                                          text_color="white", 
                                           corner_radius=10)
         self.res_menu.grid(row=0, column=1, padx=10, pady=(15, 5), sticky="w")
 
@@ -84,7 +84,7 @@ class YoinkahApp(ctk.CTk):
         self.status = ctk.CTkLabel(self, text="READY", font=("Arial", 10, "bold"), text_color="#444")
         self.status.pack(pady=(10, 5))
 
-        # --- CAPSULE PROGRESS BUTTON ---
+        
         self.btn_container = ctk.CTkFrame(self, fg_color="transparent")
         self.btn_container.pack(pady=20, padx=60, fill="x")
 
@@ -99,7 +99,7 @@ class YoinkahApp(ctk.CTk):
                                        hover=False, font=("Arial", 14, "bold"), height=50, corner_radius=25)
         self.yoink_btn.place(relx=0.5, rely=0.5, anchor="center", relwidth=1, relheight=1)
 
-        # Hover Bindings
+        
         self.yoink_btn.bind("<Enter>", lambda e: self.on_hover(True))
         self.yoink_btn.bind("<Leave>", lambda e: self.on_hover(False))
 
