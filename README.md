@@ -14,8 +14,7 @@ Yoinkah! is a simple video and audio downloader that can download mp3/mp4 from v
 
 ### 1. Download the App
 Get the latest installer:
-[**Download Yoinkah!**](https://github.com/s44jidh/YOINKAH/raw/main/Yoinkah_Setup.exe)
-
+[**Download Yoinkah!**](https://github.com/s44jidh/yoinkah/releases/download/release/InstallYoinkah.exe)
 ### 2. Manual Setup (Running from Source)
 If you prefer to run the `.py` file directly:
 1. **Install Dependencies:**
