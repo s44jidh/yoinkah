@@ -1,7 +1,7 @@
 # YOINKAH! 🚀
 A minimalist, high-performance 4K media downloader with a sleek capsule UI.
 
-Yoinkah! is a modern desktop application designed to make media archival simple and fast. It features an integrated progress bar within the action button and supports high-bitrate video and audio merging.
+Yoinkah! is a simple video and audio downloader that can download mp3/mp4 from various sites like YouTube and more. This was developed with python and is based on YTDLP and FFMPEG.
 
 ## ✨ Features
 * **4K UHD Support:** Download video up to 2160p resolution.
